@@ -8,7 +8,16 @@ A utility library that does the following things:
 
 [Watch it in action here](https://www.youtube.com/watch?v=GYuSOIA-toA)
 
+
 # How to add
+Add this in the project level build.gradle:
+
+                 repositories{
+                      ....
+                      maven { url 'https://jitpack.io' }
+                 }
+And this in the app level build.gradle  
+
     compile 'com.github.shree-vastava:ValidUtil:v1.0'
 
 # How to use
