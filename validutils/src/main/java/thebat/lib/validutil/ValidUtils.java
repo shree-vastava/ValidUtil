@@ -64,13 +64,18 @@ public class ValidUtils {
     public static void showProgressDialog(Context c, Activity a){
 
         View v = a.getLayoutInflater().inflate(R.layout.custom_progress, null);
-        progress= KProgressHUD.create(a)
-                .setCustomView(v)
-                .setCancellable(true)
-                .show();
+        if (progress==null) {
+
+            progress = KProgressHUD.create(a)
+                    .setCustomView(v)
+                    .setCancellable(true)
+                    .show();
+        }
     }
 
     public static void hideProgressDialog(){
-        progress.dismiss();
+        if (progress != null && progress.isShowing()) {
+            progress.dismiss();
+     }
     }
 }
